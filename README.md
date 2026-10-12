@@ -14,7 +14,7 @@ You can run the test suite using your IDE's built-in Test Explorer (e.g., VS Cod
 
 ## Task 3: Raw HTTP Sockets
 
-**File:** `Task3.java` | **Tests:** `Task3Test.java`
+[**File:** `Task3.java`](./src/main/java/Task3.java) | [**Tests:** `Task3Test.java`](./src/test/java/Task3Test.java)
 
 **Description:** Fetching HTML content from `www.google.com` using raw network sockets without external HTTP libraries.
 
@@ -25,7 +25,7 @@ You can run the test suite using your IDE's built-in Test Explorer (e.g., VS Cod
 
 ## Task 5: Thread-Safe Counter
 
-**File:** `Task5.java` | **Tests:** `Task5Test.java`
+[**File:** `Task5.java`](./src/main/java/Task5.java) | [**Tests:** `Task5Test.java`](./src/test/java/Task5Test.java)
 
 **Description:** A thread-safe counter supporting increment, decrement, and get operations.
 
@@ -36,7 +36,7 @@ You can run the test suite using your IDE's built-in Test Explorer (e.g., VS Cod
 
 ## Task 6: Array Intersection
 
-**File:** `Task6.java` | **Tests:** `Task6Test.java`
+[**File:** `Task6.java`](./src/main/java/Task6.java) | [**Tests:** `Task6Test.java`](./src/test/java/Task6Test.java)
 
 **Description:** An algorithm to find the intersection of two integer arrays.
 
@@ -48,7 +48,7 @@ You can run the test suite using your IDE's built-in Test Explorer (e.g., VS Cod
 
 ## Task 8: Dynamic FizzBuzz GUI
 
-**File:** `FizzBuzz.html` | **Live Demo:** [https://dynamic-fizzbuzz.netlify.app/](https://dynamic-fizzbuzz.netlify.app/)
+[**File:** `index.html`](./index.html) | **Live Demo:** [https://dynamic-fizzbuzz.netlify.app/](https://dynamic-fizzbuzz.netlify.app/)
 
 **Description:** A dynamic, real-time FizzBuzz generator UI.
 
