@@ -3,7 +3,25 @@ import java.util.Set;
 
 /**
  * Solution for Task 6: Array Intersection.
+ * 
+ * Trade-offs & Alternatives:
+ * /*
+ * Design Considerations & Trade-offs:
+ * 
+ * For the array intersection, I chose a HashSet approach. This provides an 
+ * average time complexity of O(N+M), though it is an average-case bound rather 
+ * than a worst-case guarantee due to potential hash collisions. To optimize 
+ * memory, the code dynamically ensures the set is built from the smaller array, 
+ * bounding the space complexity to O(min(N,M)).
+ * 
+ * An alternative approach would be to sort both arrays and use two pointers 
+ * to find matching elements. While this reduces the auxiliary space complexity 
+ * to O(1), the sorting step increases the time complexity to O(N log N + M log M). 
+ * Therefore, the HashSet approach is faster for unsorted data, while the sorting 
+ * approach is preferable only under strict memory limitations.
  */
+
+
 public class Task6 {
 
     /**
