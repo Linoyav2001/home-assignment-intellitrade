@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--   Solution for Task 8: Dynamic FizzBuzz -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,9 +12,9 @@
             background-color: #f4f6f9;
             padding-top: 3rem;
         }
-        .result-fizz { color: #0d6efd; font-weight: bold; }       /* Blue */
-        .result-buzz { color: #198754; font-weight: bold; }       /* Green */
-        .result-fizzbuzz { color: #dc3545; font-weight: bold; }   /* Red */
+        td.result-fizz { color: #0d6efd; font-weight: bold; }       /* Blue */
+        td.result-buzz { color: #198754; font-weight: bold; }       /* Green */
+        td.result-fizzbuzz { color: #dc3545; font-weight: bold; }   /* Red */
         
         .card {
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -82,6 +83,26 @@
 </div>
 
 <script>
+
+/*
+ * Design Considerations & Trade-offs:
+ * 
+ * 1. Vanilla JS vs. Frameworks (e.g., Vue.js): I opted for Vanilla JS. Given 
+ *    the app's minimal state, a full framework introduces unnecessary overhead. 
+ *    Simple 'input' event listeners easily achieve the required real-time reactivity.
+ * 
+ * 2. DOM Rendering Performance: Instead of creating elements iteratively using 
+ *    document.createElement(), I build a single HTML string and inject it once 
+ *    via .innerHTML. This prevents multiple expensive DOM reflows.
+ * 
+ * 3. Scalability for Massive Inputs: While building a single string is efficient 
+ *    for reasonable values of N (e.g., up to 10,000), if N were extremely large 
+ *    (e.g., millions), building and injecting a massive HTML string at once would 
+ *    still block the main thread. In a real-world scenario for massive datasets, 
+ *    it would be better to render the data in chunks (Pagination) or use 
+ *    Virtual Scrolling to only render the rows currently visible on the screen.
+ */
+
     // 1. Get references to DOM elements
     const val1Input = document.getElementById('val1');
     const val2Input = document.getElementById('val2');
@@ -94,7 +115,7 @@
         const val2 = parseInt(val2Input.value) || 1;
         const n = parseInt(lengthNInput.value) || 0;
 
-        // Use an array to build HTML string (faster than creating DOM elements in a loop)
+      // Use string concatenation to build the HTML (faster than modifying the DOM in a loop)
         let htmlContent = '';
 
         for (let i = 1; i <= n; i++) {
